@@ -1,9 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { KeyboardAvoidingView, View, StyleSheet, TextInput, Image } from 'react-native'
+
+import api from '../services/api'
 
 import logo from '../assets/logo.png'
 
-export default function Main() {
+export default function Main({ navigation }) {
+    const [search, setSearch] = useState('')
+
+    async function googleSearch() {
+        const apiKey = 'YOUR-API-KEY'
+        const searchEngineId = 'YOUR-SEARCH-ENGINE-ID'
+        
+        const response = await api.get(`v1?key=${apiKey}&cx=${searchEngineId}&q=${search}`)
+
+        navigation.navigate('Results', { searchResults: response.data.items })
+    }
+
     return (
         <KeyboardAvoidingView style={styles.container}>
             <Image source={logo} style={styles.image}/>
@@ -11,6 +24,11 @@ export default function Main() {
             <TextInput 
                 style={styles.input} 
                 placeholder="Pesquisar ou digitar endereço da Web"
+                returnKeyType="search"
+                autoFocus={true}
+                value={search}
+                onChangeText={setSearch}
+                onSubmitEditing={googleSearch}
             />
         </KeyboardAvoidingView>
     )
