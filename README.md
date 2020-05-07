@@ -14,8 +14,10 @@ A Google Chrome mobile app clone.
 ## Screenshots
 
 <center>
+<span>
 <img src="assets/home.jpeg" width="250">
 <img src="assets/page.jpeg" width="250">
+</span>
 </center>
 
 ## How to use
