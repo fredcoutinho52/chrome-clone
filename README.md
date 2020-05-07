@@ -6,9 +6,17 @@ A Google Chrome mobile app clone.
 
 * [Axios](https://github.com/axios/axios)
 * [Expo](https://expo.io/)
+* [Google Custom Search API](https://developers.google.com/custom-search/v1/overview)
 * [React Native](https://reactnative.dev/)
 * [React Navigation](https://reactnavigation.org/)
 * [Visual Studio Code](https://code.visualstudio.com/)
+
+## Screenshots
+
+<center>
+<img src="assets/home.jpeg" width="250">
+<img src="assets/page.jpeg" width="250">
+</center>
 
 ## How to use
 
